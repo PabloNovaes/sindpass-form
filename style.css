@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+:root {
+  font-size: 62.5%;
+  --background: #121214;
+  --text-color: #f6f6f7;
+  --base-color: #1d1d20;
+  --primary-color: #004691;
+  --stroke-color: #3a3744;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  background-color: var(--background);
+  padding-inline: 2rem;
+}
+
+form {
+  display: grid;
+  animation: show 600ms
+    linear(
+      0 0%,
+      0 1.8%,
+      0.01 3.6%,
+      0.03 6.35%,
+      0.07 9.1%,
+      0.13 11.4%,
+      0.19 13.4%,
+      0.27 15%,
+      0.34 16.1%,
+      0.54 18.35%,
+      0.66 20.6%,
+      0.72 22.4%,
+      0.77 24.6%,
+      0.81 27.3%,
+      0.85 30.4%,
+      0.88 35.1%,
+      0.92 40.6%,
+      0.94 47.2%,
+      0.96 55%,
+      0.98 64%,
+      0.99 74.4%,
+      1 86.4%,
+      1 100%
+    )
+    backwards;
+  max-width: 50rem;
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  bottom: 4rem;
+
+  & header {
+    padding: 4rem 0;
+    display: grid;
+    text-align: center;
+    font-weight: 800;
+    gap: 1rem;
+
+    & p {
+      text-align: center;
+      width: 100%;
+      font-size: 2.5rem;
+    }
+
+    & img {
+      width: 20rem;
+      padding: 1rem;
+      margin: 0 auto;
+    }
+  }
+
+  & label,
+  button {
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  & label {
+    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  & button {
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s;
+    font-weight: 600;
+    display: grid;
+    place-content: center;
+    outline: none;
+
+    & p {
+      width: fit-content;
+    }
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+
+  & input,
+  button {
+    min-height: 5rem;
+  }
+
+  & span {
+    margin: 0 auto;
+    padding-top: 1rem;
+    font-size: 1.3rem;
+
+    & a {
+      font-weight: 500;
+      color: var(--primary-color);
+    }
+  }
+}
+
+.input-wrapper {
+  border-radius: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: var(--base-color);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: all 0.11s;
+  box-shadow: 0 0 0 1.5px var(--stroke-color);
+
+  & input {
+    padding: 0 0.3rem;
+    background-color: transparent;
+    flex: 1 1 0;
+    border: none;
+    outline: none;
+    z-index: 2;
+  }
+
+  &:has(input:valid) {
+    box-shadow: 0 0 0 1.5px var(--primary-color);
+    border: none;
+  }
+
+  & :is(img, i) {
+    padding-inline: 1.2rem;
+  }
+
+  & i {
+    cursor: pointer;
+    font-size: 2rem;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: var(--text-color);
+}
+
+.loader {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+  display: none;
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  animation: loaderEffect 1s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes loaderEffect {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(100% 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+@keyframes show {
+  0% {
+    scale: 0.8;
+    opacity: 0;
+  }
+}
+
+.swal2-popup {
+  max-width: 28rem;
+  font-size: 1.2rem;
+}
+
+.swal2-timer-progress-bar {
+  background-color: var(--primary-color) !important;
+}

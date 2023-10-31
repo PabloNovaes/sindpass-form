@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./scripts/main.js" type="module" defer></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <form method="dialog">
+      <header id="logo">
+        <img src="assets/logo.png" alt="" />
+        <p>Seja bem-vindo de volta</p>
+      </header>
+      <label for="email">E-mail</label>
+      <div class="input-wrapper">
+        <img src="./assets/mail.svg" alt="">
+        <input
+          required
+          autocomplete="email"
+          placeholder="Digite seu email"
+          type="email"
+          name="email"
+        />
+      </div>
+
+      <label for="password">Senha</label>
+      <div class="input-wrapper">
+        <img src="./assets/lock.svg" alt="">
+        <input
+          required
+          autocomplete="current-password"
+          placeholder="Digite sua senha"
+          type="password"
+          name="password"
+        />
+        <i id="pass" class="ph ph-eye-slash"></i>
+      </div>
+      <button>
+        <p>Entrar</p>
+        <div class="loader"></div>
+      </button>
+      <span>Não tem uma conta? <a href="#">Registre-se</a></span>
+    </form>
+  </body>
+</html>
