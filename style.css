@@ -165,11 +165,6 @@ form {
   }
 }
 
-input:-webkit-autofill {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: var(--text-color);
-}
-
 .loader {
   width: 3rem;
   height: 3rem;
